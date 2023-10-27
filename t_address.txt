@@ -5,7 +5,6 @@ create table t_address (
     phone         varchar(13)     not null
 );
 
-/* 주석의 방법에는 두가지 여러줄: /*...*/  -- 한줄  */
 
 -- insert into t_address (name, address, phone) values ('홍길동', '수원', '010-1234-5678'); 
 
