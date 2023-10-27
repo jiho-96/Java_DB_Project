@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="addr.AddrMapper">
+
+	<!-- 해당 sql을 메서드와 연결해서 처리. id는 메서드명, resultType 리턴, parameterType 매개변수 -->
+	<!--SQL 매핑 : 쿼리 정의-->
+
+	<!--Addr 클래스를 반환하는 쿼리-->
+    <select id="getAddresses" resultType="addr.Addr">
+      SELECT *
+      FROM t_address
+    </select>
+	<!--Addr 객체를 매개변수로 받아 데이터베이스에 새 데이터를 추가하는 쿼리-->
+    <insert id="insertAddress" parameterType="addr.Addr">
+    	INSERT INTO t_address
+    	SET `name` = #{name},
+    	address = #{address},
+    	phone = #{phone}
+    </insert >
+	<!-- 해당 ID를 가진 주소의 정보를 업데이트하는 쿼리 -->
+  	<update id="updateAddress" parameterType="addr.Addr">
+  		UPDATE t_address
+  		SET `name` = #{name},
+    	address = #{address},
+    	phone = #{phone}
+    	WHERE id = #{id}
+  	</update>
+  	<!--해당 ID를 가진 주소 정보를 삭제하는 쿼리 -->
+  	<delete id="deleteAddress" parameterType="int">
+  		DELETE FROM t_address
+  		WHERE id = #{id}
+  	</delete>
+  
+</mapper>
