@@ -9,4 +9,4 @@
 ## 주요기능
 - 입력 데이터 DB 저장
 - MyBatis를 사용하여 JDBC 기능 수행
-- MariDB로 데이터베이스 관리
+- MariaDB로 데이터베이스 관리
