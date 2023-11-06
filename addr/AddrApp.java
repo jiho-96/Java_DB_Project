@@ -14,6 +14,7 @@ public class AddrApp {
 
 		while(true) {
 			System.out.print("명령어를 입력해주세요 : ");
+			System.out.println("add | update | delete");
 			String cmd = scan.nextLine();
 			
 			if(cmd.equals("exit")) {
